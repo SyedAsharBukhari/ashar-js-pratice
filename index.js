@@ -266,7 +266,7 @@
 // 5) splice yeah type h array ki (splice(1,0,"ashar")) is me yeah hota h k splice se humain kisi bhi index pr koi bhi cheez add krni ho tw hum splice me pehly wo number likhein gye jis number humain chai h us k bd remove k option deta h agr ap ko remove krna h tw ap us k bd number de do wo remove ho jye gye agr 0 krdo k tw wo bad mein aajyein gye
 // 6) slice is me yeah hota h k humain ek array se kxh cheezain pick krni h tw hum slice use kre gye slice(1,3) ab jitne bhi bara array hoga use me se yeah dusre pehly index se ly kr 2 tk is k alag array print kr de g
 
-// let a = []
+// let a = [1,2,3,4]
 // a.push("pizza")
 // a.push("burger")
 // a.push("zinger")
@@ -900,11 +900,19 @@
 
 
 // ARRAYS METHODS
-// 1) toString method   convert to string
-// 2) join method          mila deta h
-// 3)  pop method
-
-
+// 1) toString method                       convert to string
+// 2) join method                           mila deta h
+// 3) pop method                            is se last element hattna start hoty hain means remove hona start hoti hain
+// 4) shift method                          is se start element se remove hoty hain
+// 5) unshift method                        is se add hota h start of the array se
+// 6) concat method                         is me 2 arrays ko jor deta h means mila dena  
+// 7)  some method                          is me yeah hota h k ek arrray me se mujhe sb se bara number find krna h tw me yeah use krunga pr is me yeah hota h k kahi bhi ek number true hoa tw yeah true show kr de g
+// 8)  every method                         is me yeah hota h k ek arrray me se mujhe sb se bara number find krna h tw me yeah use krunga pr is me yeah hota h k har value k true hona zaroori hota h wrna yeah false show kr de g
+// 9) slice(start,end)                      is se remove krty hain is index se start ho kr is index tk remove ho jye
+// 10) splice (start,delete ya 0, add)      is se add krty hain is index se is index me add ho jye agr us array ko remove krna tw us k index likh do wrna 0
+// 11) indexOf                              is me yeah hota h k yeah array k index btata h k ap k string konse index pr h
+// 12) lastIndexOf                          is me yeah hota h k yeah array k laste se btata h k kone index pr h
+// 13) filter                               yeah hum new array bna kr deta h jo hum ne function chlaya hota h
 
 
 
@@ -921,6 +929,452 @@
 
 
 // 3)
-// let num = [12, 23, 34, 78, 90]
-// let b = num.pop(1,2)
+// let num = [1, 2, 3, 4]
+// let b = num.pop()
 // console.log(b);
+
+
+// 4)
+// let num = [1, 2, 3, 4]
+// num.shift()
+// console.log(num);
+
+
+// 5)
+// let num = [1, 2, 3, 4]
+// num.unshift(12)
+// console.log(num);
+
+
+// 6)
+// let num = [1, 2, 3, 4]
+// let num1 = [5, 6, 7, 8]
+// let b = num.concat(num1)
+// console.log(b);
+
+
+// 7)
+// let num = [1, 2, 3, 4, 5, 6]
+// let c = num.some(check)         
+// console.log(c);
+
+// function check(age) {
+// return age>=5;                     is me kahi bhi property true ho gi tw yeah true print kr de g
+// }
+
+
+// 8)
+// let num = [1, 2, 3, 4, 5, 6, 17]
+// let c = num.every(checker)
+// console.log(c);
+// function checker (done) {
+//     let d = done>=6                is me har cheeyz k six se bara hona lzmi h wrna yeah false print krde gi q k yeah every h
+//     return d;
+// }
+
+
+// const mapArray = [
+//     {
+//         name: "ashar",
+//         fathername: "khalil",
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "malik",
+//     },
+//     {
+//         name: "adnan",
+//         fathername: "boy",
+//     },
+// ]
+
+// {/* <Array>.map((value,index)=>{return}) */ }
+
+// const fetchData = mapArray.map((value, index) => {
+//     return console.log({ adhfkjshfsdjk: value.fathername, hkajdfaj: index });
+
+// })
+
+
+
+
+
+
+
+
+
+
+// const mapArray = [
+//     {
+//         name: "ashar",
+//         fathername: "khalil",
+//         education: "sch"
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "malik",
+//         education: "inter"
+//     },
+//     {
+//         name: "adnan",
+//         fathername: "boy",
+//         education: "uni"
+//     },
+//     {
+//         name: "irfan",
+//         fathername: "zia",
+//         education: "master",
+//     },
+//     {
+//         name: "ashar",
+//         fathername: "khalil",
+//         education: "sch"
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "malik",
+//         education: "inter"
+//     },
+//     {
+//         name: "adnan",
+//         fathername: "boy",
+//         education: "uni"
+//     },
+//     {
+//         name: "irfan",
+//         fathername: "zia",
+//         education: "master",
+//     },
+// ]
+
+
+// let ashar = mapArray.map((value,index) => {
+// return console.log({name: value.fathername,index});
+// ;
+
+// })
+
+// function ashar(syed){
+//     let d = []
+//     for(i=0; i<syed.length; i++){
+//        d.push(syed[i].name)
+//     }   
+//     return d; 
+// }
+// let e = ashar(mapArray)
+// console.log(e);
+
+
+
+
+// let a = [
+//     {
+//         name: "ashar",
+//         marks: 70,
+//     },
+//     {
+//         name: "ibrar",
+//         marks: 80,
+//     },
+//     {
+//         name: "adnan",
+//         marks: 90
+//     },
+//     {
+//         name: "uzair",
+//         marks: 50,
+//     },
+// ]
+
+// console.log("===============>>>",a[0].name);
+
+// let b = a.map((name, index) => {
+//     let status = ""
+//     if (name.marks >= 60) {
+//         console.log("passed");
+//         status = "passed"
+//     } else {
+//         console.log("fail");
+//         status = "fail"
+//     }
+//     return console.log({ name: name.name, marks: name.marks, xfdfsdfsf: status, index});
+// })
+
+
+// let a = [
+//     {
+// name: "ashar",
+// fathername: "khalil",
+// edu: "schl"
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "malik",
+//         edu: "inter"
+//             },
+//             {
+//                 name: "adnan",
+//                 fathername: "wahab",
+//                 edu: "mster"
+//                     },
+// ]
+
+// let b = a.map((value,index) => {
+// return console.log({name:value.name,index});
+// })
+
+
+
+// 9) slice ek new array bna kr deta h or jo cheez ap niklty how o new array me print kra h
+// let a = ["ashar", "adnan", "ibrar", "moiz", "irfan"]
+// document.write(a, "<br>")
+// let b = a.slice(1,5)
+// document.write(b)
+
+// let a = ["ashar", "adnan", "ibrar", "moiz", "irfan"];
+// console.log(a);
+// // let b = a.slice(1,2).concat(a.slice(2))          
+// let b = a.splice(1,2,)
+// console.log(b);
+
+
+
+//10) splice(index,agye barha do/delete/, new value)
+//  let a = ["ashar", "adnan", "ibrar", "moiz", "irfan"];
+//  a.splice(2,2, "bhai", "mera")
+// console.log(a);
+
+
+// 11)  indexof   yeah start se index btati h
+// let a = ["ashar", "adnan", "ibrar", "moiz", "irfan"];
+// let b = a.indexOf("adnan")
+// console.log(b);
+
+
+// 12)  lastIndexOf    yah akhri se index btata h
+// let a = ["ashar", "adnan", "ibrar", "moiz", "irfan", "adnan"];
+// let b = a.lastIndexOf("adnan")
+// console.log(b);
+
+
+// 13) filter
+// let a = [1,2,3,4,5,6];
+// // let b = a.filter(ashar => ashar > 3) new style
+// let b = a.filter(ashar)
+// console.log(b);
+// function ashar(syed) {
+// return syed>=3;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// REVISION START
+// let a = {
+// name: "ashar"
+// }
+// 2 tarike se OBJECT ko axis kr skty hain hum
+// console.log(a.name);
+// console.log(a["name"]);
+
+
+
+// ARRAY AXIS
+// let a = [{
+//     name: "ashar",
+//     fathername: "khalil"
+// }]
+// console.log(a[0]);        pora object aese axis ho g
+// console.log(a[0].name);   agr object ki specific key ko axis krna h tw wo aese ho gi
+
+
+
+
+// const b 
+//     = "ashar@gmail.com"
+// let a = {
+//     name: "ashar",
+//     fathername: "khalil",
+//     // [sym]: "sdafj"
+// [b]: "email"
+// }
+// console.log(a);
+
+
+
+
+// let a = {
+//     name: "ashar",
+//     fathername: "khalil",
+// }
+// Object.freeze(a)
+// a.name = "adnan"
+// console.log(a);
+
+
+
+// let a = Number(prompt("enter your frstname"))
+// let b = Number(prompt("enter your lstname"))
+// let c = a + b
+// console.log(c);
+
+
+// let a = 60
+// let b = a>50 && a<60
+// console.log(b);
+
+// for(let a = 1; a <= 100; a = a+10){
+//     for(let b = a; b < a + 10; b++){
+//         document.write(b + " ")
+//     }
+// document.write("<br>")
+// }
+
+
+// for (let a = 1; a <= 5; a++){
+// for(let b = 1; b<=a; b++){
+//     document.write(b + " ")
+// }
+// document.write("<Br>")
+// }
+
+
+// for(let a = 1; a<=5; a++){
+//     for(let b = 2; b <= a; b++){
+//         document.write("*")
+//     }
+//     document.write("*" + "<br>")
+// }
+
+
+
+// for(; ;){
+//     console.log("ashar")
+// }
+
+
+// for(let a = 10; a > 0 ; a--){
+//     console.log(a);
+// }
+
+
+// let a = parseInt(prompt("enter your table number"))
+// for(let b = 1; b<=10; b++){
+//     document.write(a + " " + " x " + b + " = " + " " + a*b + "<br>")
+// }
+
+
+
+// for(let a = 1; a <= 100; a++){
+//     if(a % 2 == 0){
+//         document.write(a + "this is even number" + "<br>");
+//     }else if(a % 2 !== 0){
+//         document.write(a + "this is odd number"  + "<br>")
+//     }
+// }
+
+// let a = 1
+// while(a <= 5){
+//     console.log("i = " + a );   
+//     a++;
+// }
+
+// let ashar = true
+
+// while (ashar) {
+//     console.log("hello ashar");
+
+
+//     let b = prompt("pleasee inter y to contiue")
+// if(b.toLowerCase() !== "y"){
+// ashar = false
+// }
+// }
+
+
+
+// let d = false;
+// for(let a=1; a>0; a++){
+//     let b = prompt("enter y continue")
+//     if(b.toLowerCase() == "y"){
+//         console.log("continue");
+//         d = true
+//     }else if(b.toLowerCase() !== "y"){
+//         console.log("you stop");
+//         d=false
+//     }
+// }
+
+
+// let ashar = true;
+// while(ashar){
+//     console.log("yes yes continue");
+
+//     let b = prompt("enter y")
+//     if(b.toLowerCase() !== "y")
+//     ashar = false
+// }
+// console.log("lopper");
+
+
+
+
+
+// let a = [1,2,3,4,5,6,7]
+// console.log(a);
+
+// let b = a.filter(a => a > 4)
+// console.log(b);
+
+
+// let a = [1,2,3,4,5,6,7]
+// let b = a.filter(syed)
+// function syed(ashar){
+//     return ashar>3;   
+// }
+// console.log(a);
+// console.log(b);
+
+
+
+
+let a = [{
+name: "ashar",
+fathername: "khalil",
+mail: "ashargmail.com",
+},
+{
+    name: "ibrar",
+    fathername: "malik",
+    mail: "ibrargmail.com",
+    },
+]
+
+
+// let b = a.map(( value, index) => {
+// return console.log({name: value.name});
+// })
+// let b = a.filter(a => a.name)
+// console.log(b);
+
+// let b = a[0].name
+// console.log(b);
+
+
+
+
+function clickchnge(){
+let heading1 = document.getElementById("heading1").innerHTML= "hello ibrar bro to give some comment for best friend suleman";
+}
