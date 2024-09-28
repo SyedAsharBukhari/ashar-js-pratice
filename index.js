@@ -1350,17 +1350,18 @@
 
 
 
-let a = [{
-name: "ashar",
-fathername: "khalil",
-mail: "ashargmail.com",
-},
-{
-    name: "ibrar",
-    fathername: "malik",
-    mail: "ibrargmail.com",
-    },
-]
+// let a = [
+//     {
+//         name: "ashar",
+//         fathername: "khalil",
+//         mail: "ashargmail.com",
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "malik",
+//         mail: "ibrargmail.com",
+//     },
+// ]
 
 
 // let b = a.map(( value, index) => {
@@ -1375,6 +1376,35 @@ mail: "ashargmail.com",
 
 
 
-function clickchnge(){
-let heading1 = document.getElementById("heading1").innerHTML= "hello ibrar bro to give some comment for best friend suleman";
-}
+// dom introduction
+// dom element access krna
+
+
+
+// let element;
+// element = document.getElementById("bhi").innerText;
+
+// console.log(element);
+// console.log(element)
+
+let a = [
+    {
+        name:"ashar",
+        fathername: "khalil",
+    mail:"ashargmail.com",
+    },    
+    {
+        name:"ibrar",
+        fathername: "malik",
+    mail:"ibrargmail.com",
+    },
+]
+
+let rander = document.getElementById("randerobject").innerText = a 
+
+console.log(rander);
+
+
+
+
+

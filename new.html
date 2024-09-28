@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        .student-card {
+            border: 1px solid #c02727;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .student-card h3 {
+            margin: 0;
+        }
+
+        .student-card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student List</h1>
+    <div id="student-list"></div>
+    <script>
+        const students = [
+            {
+                id: 1,
+                name: "John Doe",
+                age: 21,
+                gender: "Male",
+                grade: "A",
+                courses: ["Mathematics", "Physics", "Computer Science"],
+                email: "john.doe@example.com",
+                phone: "+1234567890"
+            },
+            {
+                id: 2,
+                name: "Jane Smith",
+                age: 20,
+                gender: "Female",
+                grade: "B",
+                courses: ["Biology", "Chemistry", "Physics"],
+                email: "jane.smith@example.com",
+                phone: "+1234567891"
+            },
+            {
+                id: 3,
+                name: "Michael Johnson",
+                age: 22,
+                gender: "Male",
+                grade: "A-",
+                courses: ["Mathematics", "Economics", "Statistics"],
+                email: "michael.johnson@example.com",
+                phone: "+1234567892"
+            },
+            {
+                id: 4,
+                name: "Emily Davis",
+                age: 19,
+                gender: "Female",
+                grade: "B+",
+                courses: ["English", "History", "Psychology"],
+                email: "emily.davis@example.com",
+                phone: "+1234567893"
+            },
+            {
+                id: 5,
+                name: "Chris Lee",
+                age: 23,
+                gender: "Male",
+                grade: "C",
+                courses: ["Computer Science", "Physics", "Philosophy"],
+                email: "chris.lee@example.com",
+                phone: "+1234567894"
+            },
+            {
+                id: 6,
+                name: "Sarah Wilson",
+                age: 21,
+                gender: "Female",
+                grade: "A",
+                courses: ["Biology", "Mathematics", "Chemistry"],
+                email: "sarah.wilson@example.com",
+                phone: "+1234567895"
+            },
+            {
+                id: 7,
+                name: "David Brown",
+                age: 20,
+                gender: "Male",
+                grade: "B-",
+                courses: ["Economics", "Political Science", "History"],
+                email: "david.brown@example.com",
+                phone: "+1234567896"
+            },
+            {
+                id: 8,
+                name: "Sophia Taylor",
+                age: 22,
+                gender: "Female",
+                grade: "A+",
+                courses: ["Computer Science", "Mathematics", "Artificial Intelligence"],
+                email: "sophia.taylor@example.com",
+                phone: "+1234567897"
+            },
+            {
+                id: 9,
+                name: "James Anderson",
+                age: 21,
+                gender: "Male",
+                grade: "B+",
+                courses: ["Physics", "Chemistry", "Mathematics"],
+                email: "james.anderson@example.com",
+                phone: "+1234567898"
+            },
+            {
+                id: 10,
+                name: "Olivia Martinez",
+                age: 20,
+                gender: "Female",
+                grade: "A-",
+                courses: ["Psychology", "English", "Sociology"],
+                email: "olivia.martinez@example.com",
+                phone: "+1234567899"
+            }
+        ];
+
+        const studentList = document.getElementById('student-list');
+
+        // Render each student in the student list
+        // forEach Array ka method ha  hamme array pass krna hota ha forEach se pehly
+        // createElement ek element create krta ha javascipt k throw 
+        // classList.add  class assign and add krta ha os element pr jo hamne javascipt k throw banaya ho
+
+        students.forEach((student) => {
+            // console.log("student", student);
+
+            const studentCard = document.createElement('div');
+            studentCard.classList.add("student-card")
+
+            studentCard.innerHTML = `
+            <h3>${student.name}</h3>
+            <p><strong>Age:</strong> ${student.age}</p>
+            <h3> ${student.gender} </h3>
+            `
+          
+            studentList.appendChild(studentCard)
+
+            // studentCard.innerHTML = `
+            //     <h3>${student.name}</h3>
+            //     <p><strong>Age:</strong> ${student.age}</p>
+            //     <p><strong>Gender:</strong> ${student.gender}</p>
+            //     <p><strong>Grade:</strong> ${student.grade}</p>
+            //     <p><strong>Courses:</strong> ${student.courses.join(", ")}</p>
+            //     <p><strong>Email:</strong> ${student.email}</p>
+            //     <p><strong>Phone:</strong> ${student.phone}</p>
+            // `;
+            // studentList.appendChild(studentCard);
+        });
+    </script>
+
+</body>
+
+</html>
