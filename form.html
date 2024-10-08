@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" placeholder="name" id="name">
+<br>
+<br>
+<input type="email" placeholder="email" id="email">
+<br>
+<br>
+<input type="text" placeholder="usrr name" id="username">
+<br>
+<br>
+<button type="submit" onclick="btnsubmit()">submit</button>
+
+
+<div>
+    <h1>Name: </h1>
+    <h1 id="namer"></h1>
+    <h1>email: </h1>
+    <h1 id="emailer"></h1>
+    <h1>username: </h1>
+<h1 id="users"></h1>
+</div>
+
+<script>
+    function btnsubmit() {
+        let name = document.getElementById("name").value
+        let email = document.getElementById("email").value
+        let username = document.getElementById("username").value
+
+        document.getElementById("namer").textContent = name
+        document.getElementById("emailer").textContent = email
+        document.getElementById("users").textContent = username 
+    }
+</script>
+
+</body>
+</html>

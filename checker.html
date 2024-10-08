@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+</head>
+
+<body>
+
+    <h1>Simple To-Do List</h1>
+    <input type="text" id="data" placeholder="Enter a new task">
+    <input type="button" onclick="ashar()" value="Add Task">
+
+    <ul id="list"></ul>
+
+
+
+    <script>
+
+        let tasks = [];
+
+
+        function ashar() {
+            let getinput = document.getElementById("data").value
+            // getinput.innerHTML = tasks
+            tasks.push(getinput)
+            console.log(tasks);
+
+
+
+            let listing = document.getElementById("list")
+            let datar = document.createElement("li")
+
+
+
+            let divcret = document.createElement("div")
+            let del = document.createElement("button")
+            let edit = document.createElement("button")
+
+
+
+            divcret.style.display = "flex"
+            divcret.style.gap = "10px"
+            del.style.backgroundColor = "red"
+            edit.style.backgroundColor = "blue"
+
+
+            del.innerHTML = "delete"
+            edit.innerHTML = "edit"
+
+
+
+            datar.innerHTML = getinput;
+
+
+            listing.appendChild(datar)
+            datar.appendChild(divcret)
+            divcret.appendChild(del)
+            divcret.appendChild(edit)
+
+
+            del.onclick = function () {
+                listing.removeChild(datar);
+            }
+
+            edit.onclick = function () {
+                let newTask = prompt("Edit your task", getinput);
+
+
+                if (newTask !== null) {
+                    // Find the index of the current task in the array
+                    let index = tasks.indexOf(getinput);
+
+
+                    if (index > -1) {  // If the task is found in the array
+                        tasks[index] = newTask;  // Update the task in the array
+                    }
+
+                    // Update the list item text in the DOM
+                    datar.firstChild.nodeValue = newTask;
+
+                    // console.log("datar", datar.firstChild.nodeValue);
+
+                    // datar ======>>>  <li>"aaaa"</li>
+                    // datar.firstChild ======>>> "aaaa"
+                    //datar.firstChild.nodeValue =========== >>>  aaaa
+
+
+
+                    console.log("Updated Tasks Array After Edit:", tasks);  // Log the updated array
+                }
+            }
+
+            document.getElementById("data").value = "";
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // function ashar() {
+        //     let a = document.getElementById("data").value;
+
+        //     tasks.push(a);
+
+        // }
+
+        // let lst = document.getElementById("list")
+
+        // document.appendChild(lst)
+
+
+        // let maper = tasks.map((data)=>{
+        //     let li = document.createElement("li")
+
+        // return lst.innerHTML = li
+        // })
+
+
+
+    </script>
+
+</body>
+
+</html>

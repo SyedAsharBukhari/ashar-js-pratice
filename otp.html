@@ -33,15 +33,13 @@ document.getElementById('generateBtn').addEventListener('click', generateOTP);
  for (var i = 0; i < 6; i++) {
    var randomIndex = Math.floor(Math.random() * letters.length)
 otp += letters[randomIndex]
-      
-        
+
   }
 
        console.log("otp",otp);
-      
+
   document.getElementById("otp").textContent = "My Otp: " + otp
       
-   
   } 
 
 

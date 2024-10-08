@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Application</h1>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+
+        function functionName() {
+            var questions = [
+
+                {
+                    question: "What is the capital of France?",
+                    options: ["Berlin", "Madrid", "Paris", "Rome"],
+                    answer: "Paris"
+                },
+                {
+                    question: "Which planet is known as the Red Planet?",
+                    options: ["Earth", "Mars", "Jupiter", "Venus"],
+                    answer: "Mars"
+                },
+                {
+                    question: "Who wrote 'Hamlet'?",
+                    options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+                    answer: "William Shakespeare"
+                },
+                {
+                    question: "What is the largest ocean on Earth?",
+                    options: ["Atlantic", "Indian", "Pacific", "Arctic"],
+                    answer: "Pacific"
+                },
+                {
+                    question: "Which country is known as the Land of the Rising Sun?",
+                    options: ["China", "Japan", "India", "Thailand"],
+                    answer: "Japan"
+                },
+                {
+                    question: "Which is the smallest planet in the Solar System?",
+                    options: ["Earth", "Mercury", "Venus", "Mars"],
+                    answer: "Mercury"
+                },
+                {
+                    question: "Who painted the Mona Lisa?",
+                    options: ["Pablo Picasso", "Leonardo da Vinci", "Vincent van Gogh", "Claude Monet"],
+                    answer: "Leonardo da Vinci"
+                },
+                {
+                    question: "What is the chemical symbol for gold?",
+                    options: ["Au", "Ag", "Pb", "Fe"],
+                    answer: "Au"
+                },
+                {
+                    question: "Which element has the atomic number 1?",
+                    options: ["Helium", "Oxygen", "Hydrogen", "Nitrogen"],
+                    answer: "Hydrogen"
+                },
+                {
+                    question: "What is the capital of Italy?",
+                    options: ["Milan", "Rome", "Naples", "Venice"],
+                    answer: "Rome"
+                }
+
+            ];
+
+            function buildQuiz() {
+                var quizContainer = document.getElementById('quiz');
+                var output = [];
+
+                questions.forEach(function (currentQuestion, questionNumber) {
+                    var options = [];
+
+                    for (var i = 0; i < currentQuestion.options.length; i++) {
+
+
+                        
+
+                    }
+
+                    output.push(
+                        '<div class="question">' + (questionNumber + 1) + '.  ' + currentQuestion.question + '</div>' +
+                        '<div class="options">' + options.join('') + '</div>'
+                    );
+                });
+
+
+                quizContainer.innerHTML = output.join('');
+            }
+
+
+
+            function showResults() {
+                var quizContainer = document.getElementById('quiz');
+                var answerContainers = quizContainer.querySelectorAll('.options');
+
+                var score = 0;
+
+                questions.forEach(function (currentQuestion, questionNumber) {
+                    var answerContainer = answerContainers[questionNumber];
+                    var selector = 'input[name=question' + questionNumber + ']:checked'
+                    var userAnswer = (answerContainer.querySelector(selector) || {}).value
+
+                      if (userAnswer === currentQuestion.answer) {
+                        score++; 
+                      }
+                });
+
+                var resultContainer = document.getElementById('result');
+                resultContainer.innerHTML = 'You scored ' + score + ' out of ' + questions.length;
+            }
+
+            document.getElementById('submit').addEventListener('click', showResults);
+
+            buildQuiz();
+        }
+        functionName()
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            width: 60%;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #quiz {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</body>
+
+</html>

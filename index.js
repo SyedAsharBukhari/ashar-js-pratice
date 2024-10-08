@@ -1387,22 +1387,7 @@
 // console.log(element);
 // console.log(element)
 
-let a = [
-    {
-        name:"ashar",
-        fathername: "khalil",
-    mail:"ashargmail.com",
-    },    
-    {
-        name:"ibrar",
-        fathername: "malik",
-    mail:"ibrargmail.com",
-    },
-]
 
-let rander = document.getElementById("randerobject").innerText = a 
-
-console.log(rander);
 
 
 

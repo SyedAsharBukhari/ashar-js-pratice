@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+</head>
+
+<body>
+
+    <h1>MCQS</h1>
+    <div id="question"></div>
+    <button onclick="NextHandle()">Next</button>
+
+    <script>
+        const quizData = [
+            {
+                question: "What is your name?",
+                options: [
+                    "ashar",
+                    "ibrar",
+                    "adnan",
+                    "irfan",
+                ],
+                correctOption: "ashar"
+            },
+            {
+                question: "What is your father's name?",
+                options: [
+                    "khalil",
+                    "malik",
+                    "pasha",
+                    "bukhari"
+                ],
+                correctOption: "khalil"
+            },
+            {
+                question: "What is your mother's name?",
+                options: [
+                    "aiza",
+                    "ruksana",
+                    "neha",
+                    "rabiya"
+                ],
+                correctOption: "rabiya"
+            },
+            {
+                question: "What is your age?",
+                options: [
+                    "18",
+                    "12",
+                    "13",
+                    "14"
+                ],
+                correctOption: "18"
+            },
+            {
+                question: "What is your favorite color?",
+                options: [
+                    "Red",
+                    "Blue",
+                    "Green",
+                    "Yellow"
+                ],
+                correctOption: "Red"
+            }
+        ];
+
+        let questionDiv = document.getElementById("question");
+        let questionHeader = document.createElement("h1");
+        let optionsList = document.createElement("ul");
+        let resultDiv = document.createElement("div");
+
+        questionDiv.appendChild(questionHeader);
+        questionDiv.appendChild(optionsList);
+        questionDiv.appendChild(resultDiv);
+
+        let index = 0;
+
+        function renderQuestion() {
+            optionsList.innerHTML = '';
+
+            let currentQuestion = quizData[index].question;
+            let currentOptions = quizData[index].options;
+
+            questionHeader.innerHTML = currentQuestion;
+
+            currentOptions.forEach(option => {
+                let optionButton = document.createElement("button");
+                optionButton.innerHTML = option;
+                optionButton.onclick = function() {
+                    checkAnswer(option);
+                };
+                optionsList.appendChild(optionButton);
+            });
+        }
+
+        function checkAnswer(selectedOption) {
+            let correct = quizData[index].correctOption;
+            if (selectedOption === correct) {
+                alert("Correct answer!");
+            } else {
+                alert("Incorrect answer! The correct answer is " + correct);
+            }
+        }
+
+        function NextHandle() {
+            index += 1;
+
+            if (index < quizData.length) {
+                renderQuestion();
+            } else {
+                alert("No more questions available!");
+                questionHeader.style.display = "none";
+                optionsList.innerHTML = 'Result is Here...';
+            }
+        }
+
+        renderQuestion();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+
+<body>
+    <h1>Create data mera naam</h1>
+    <input type="text" id="asd" placeholder="Enter a value">
+    <button onclick="baba()">Add</button>
+    <ul id="ull"></ul>
+
+
+
+
+
+
+    <script>
+        let a = [];
+
+        function baba() {
+            let ashar = document.getElementById("asd").value;
+            a.push(ashar);
+
+            let b = a.indexOf(ashar);
+            console.log(a);
+            console.log("Index of the new value:", b);
+
+            let ulctr = document.getElementById("ull");
+            let lictr = document.createElement("li");
+            lictr.innerHTML = ashar; // Set the innerHTML first
+
+            let diver = document.createElement("div");
+            let deler = document.createElement("button");
+            let adder = document.createElement("button");
+
+            diver.style.display = "flex";
+            deler.style.backgroundColor = "red";
+            adder.style.backgroundColor = "blue";
+
+            deler.innerHTML = "del";
+            adder.innerHTML = "add";
+
+
+            diver.appendChild(deler);
+            diver.appendChild(adder);
+            lictr.appendChild(diver);
+            ulctr.appendChild(lictr);
+
+            deler.onclick = function () {
+                ulctr.removeChild(lictr)
+            }
+
+            adder.onclick = function () {
+                let pro = prompt("enter new value", ashar)
+
+                if (pro !== null) {
+                    let check = a.indexOf(ashar)
+
+                    if (check > -1) {
+                        a[check] = ashar
+                    }
+
+
+                    lictr.firstChild.nodeValue = pro
+
+                    console.log("update value", a);
+
+
+                }
+
+            }
+
+
+
+            document.getElementById("asd").value = "";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
