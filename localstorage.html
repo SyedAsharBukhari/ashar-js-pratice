@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="getData"></div>
+    <button onclick="handleSaveFunc()">Save to Local Stroge</button>
+
+
+
+</body>
+<script>
+
+    const dummyData = [
+        {
+            id: 1,
+            name: 'adnan',
+            class: "Matric",
+        },
+        {
+            id: 2,
+            name: 'Ibrar',
+            class: "Matric",
+        },
+        {
+            id: 3,
+            name: 'Bilal',
+            class: "Matric",
+        },
+    ]
+
+
+
+
+    function handleSaveFunc() {
+
+
+        // var getData = document.getElementById("getData")
+        // let valueSave = ""
+        // // console.log("dummyData",dummyData);
+
+        // const name = "Ashar"
+
+        // localStorage.setItem("stroge", JSON.stringify(name)) // data set krte huwe hamesha  JSON.stringify() use huta ha ye kabhi bi getItem use krte huwe nahi huta
+
+        // const checkData = localStorage.getItem("stroge") // data get krte huwe hamesha  JSON.parse() use huta ha ye kabhi bi setItem use krte huwe nahi huta
+
+
+        // getData.innerHTML = `My Name is ${JSON.parse(checkData)}`
+
+
+
+        localStorage.setItem("ashar", JSON.stringify(dummyData))
+let a = JSON.parse(localStorage.getItem("ashar"))[0].name
+console.log(a);
+
+        getData.innerHTML = `My Name is ${a}`
+
+
+
+    }
+
+</script>
+
+</html>

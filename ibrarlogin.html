@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <form style="background-color: orange;" onsubmit="handleFormSubmit(event)" id="former">
+        <label>Firstname</label>
+        <br>
+        <input type="text" placeholder="Firstname" id="firstname" required={true}>
+        <br>
+        <br>
+        <label>Lastname</label>
+        <br>
+        <input type="text" placeholder="Lastname" id="Lastname" required={true}>
+        <br>
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" placeholder="Email" id="email" required={true}>
+        <br>
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="password" placeholder="password" id="password" required={true}>
+        <br>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    
+
+
+    <div>
+        <h1>First Name:</h1>
+        <h1 id="date1" style="color: red;"></h1>
+        <h1>last Name:</h1>
+        <h1 id="date2" style="color: red;"></h1>
+
+        <h1>email:</h1>
+        <h1 id="date3" style="color: red;"></h1>
+
+        <h1>password:</h1>
+        <h1 id="date4" style="color: red;"></h1>
+    </div>
+
+
+
+    <script>
+
+let a = [];
+
+function handleFormSubmit(event) {
+    event.preventDefault(); 
+    let frstname =  document.getElementById("firstname").value
+    let Lastname =  document.getElementById("Lastname").value
+    let mail = document.getElementById("email").value
+    let pass = document.getElementById("password").value
+
+
+
+let b = {
+    frstname: frstname,
+    Lastname: Lastname,
+    mail: mail,
+    pass: pass,
+}
+a.push(b)
+console.log(a);
+
+
+document.getElementById("firstname").value = ""
+document.getElementById("Lastname").value = ""
+document.getElementById("email").value = ""
+document.getElementById("password").value = ""
+
+
+    document.getElementById("date1").innerHTML = frstname
+document.getElementById("date2").innerHTML = Lastname
+document.getElementById("date3").innerHTML = mail
+document.getElementById("date4").innerHTML = pass
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form style="background-color: orange;" onsubmit="handleFormSubmit(event)" id="former">
+        <label>Firstname</label>
+        <br>
+        <input type="text" placeholder="Firstname" id="firstname" required>
+        <br>
+        <br>
+        <label>Lastname</label>
+        <br>
+        <input type="text" placeholder="Lastname" id="Lastname" required>
+        <br>
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" placeholder="Email" id="email" required>
+        <br>
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="password" placeholder="password" id="password" required>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div>
+        <h1>First Name:</h1>
+        <h1 id="date1" style="color: red;"></h1>
+        <h1>Last Name:</h1>
+        <h1 id="date2" style="color: red;"></h1>
+        <h1>Email:</h1>
+        <h1 id="date3" style="color: red;"></h1>
+        <h1>Password:</h1>
+        <h1 id="date4" style="color: red;"></h1>
+    </div>
+
+    <script>
+        // Declare the array outside the function to retain data
+        let a = [];
+
+        function handleFormSubmit(event) {
+            event.preventDefault(); 
+
+            let frstname = document.getElementById("firstname").value;
+            let Lastname = document.getElementById("Lastname").value;
+            let mail = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+
+            // Create an object with the form data
+            let formData = {
+                frstname: frstname,
+                Lastname: Lastname,
+                mail: mail,
+                pass: pass
+            };
+
+            // Add the object to the array
+            a.push(formData);
+
+            // Log the entire array to see all submissions
+            console.log(a);
+
+document.getElementById("firstname").value = ""
+document.getElementById("Lastname").value = ""
+document.getElementById("email").value = ""
+document.getElementById("password").value = ""
+
+            // Display the latest submitted data
+            document.getElementById("date1").innerHTML = frstname;
+            document.getElementById("date2").innerHTML = Lastname;
+            document.getElementById("date3").innerHTML = mail;
+            document.getElementById("date4").innerHTML = pass;
+        }
+    </script>
+</body>
+</html> -->

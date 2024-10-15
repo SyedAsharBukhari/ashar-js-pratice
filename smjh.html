@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Error Messages and Display</title>
+</head>
+<body>
+
+<style>
+    form {
+        background-color: brown;
+        width: 50%;
+        margin: auto;
+        color: white;
+    }
+
+    form input {
+        width: 80%;
+        margin: 10px 50px 40px;
+        background-color: rgb(230, 221, 221);
+        padding: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 50px;    
+    }
+
+    #maindiv {
+        display: none;
+    }
+
+    p {
+        color: rgb(12, 10, 10);
+        font-weight: bold;
+    }
+</style>
+
+<form id="former">
+    <label>Username:</label>
+    <input type="text" placeholder="Name" id="name">
+    <p id="nameerror" style="color: red; display: none;"></p> 
+
+    <label>Email:</label>
+    <input type="email" placeholder="Email" id="email">
+    <p id="emailerror" style="color: red; display: none;"></p> 
+    <label>Password:</label>
+    <input type="password" placeholder="Password" id="password">
+    <p id="passworderror" style="color: red; display: none;"></p> 
+
+    <button type="submit" style="background-color: rgb(12, 22, 22); color: antiquewhite; height: 50px; width: 200px; margin-left: 200px;">Submit</button>
+</form>
+
+<div id="maindiv">
+    <h1>Username:</h1>
+    <h1 id="namer" style="color: blue;"></h1>
+    <h1>Email:</h1>
+    <h1 id="emailer" style="color: blue;"></h1>
+    <h1>Password:</h1>
+    <h1 id="passworder" style="color: blue;"></h1>
+</div>
+
+<script>
+    document.getElementById("former").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("nameerror").style.display = "none";
+        document.getElementById("emailerror").style.display = "none";
+        document.getElementById("passworderror").style.display = "none";
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let isValid = true;
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+        if (name === "") {
+            document.getElementById("nameerror").style.display = "block";
+            document.getElementById("nameerror").textContent = "Please fill the name field";
+            isValid = false;
+        }
+
+        if (email === "") {
+            document.getElementById("emailerror").style.display = "block";
+            document.getElementById("emailerror").textContent = "Please fill the email field";
+            isValid = false;
+        }else if (!emailPattern.test(email)) { 
+            document.getElementById("emailerror").style.display = "block";
+            document.getElementById("emailerror").textContent = "Please enter a valid email address";
+            isValid = false;
+        }
+
+        if (password === "") {
+            document.getElementById("passworderror").style.display = "block";
+            document.getElementById("passworderror").textContent = "Please fill the password field";
+            isValid = false;
+        }
+
+        if (isValid) {
+            document.getElementById("maindiv").style.display = "block";
+            document.getElementById("namer").textContent = name;
+            document.getElementById("emailer").textContent = email;
+            document.getElementById("passworder").textContent = password;
+        } else {
+            document.getElementById("maindiv").style.display = "none"; 
+        }
+    });
+</script>
+
+</body>
+</html>

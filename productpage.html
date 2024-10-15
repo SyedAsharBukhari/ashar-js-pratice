@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .nav a{
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+    }
+    .nav {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .inner{
+        background-color: aqua;
+        width: 250px;
+        height: 300px;
+        margin: 20px;
+    }
+    button{
+        background-color: black;
+        color: white;
+        width: 200px;
+        height: 30px;
+    }
+</style>
+
+
+<div class="nav">
+    <a href="#">Home</a>
+    <a href="#">0</a>
+</div>
+
+
+    <div id="productdata"></div>
+
+    <script>
+        let productdata = document.getElementById("productdata");
+
+        let arr = [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600",
+                name: "nike shoes",
+                price: "$100"  // Corrected format for price
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
+                name: "adidas shoes",
+                price: "$200"  // Corrected format for price
+                
+            },
+        ];
+
+        arr.forEach((data) => {
+            let dive = document.createElement("div");
+            dive.classList.add("inner");  // Correct method for adding class
+
+            // Create the product card using the 'data' object directly
+            dive.innerHTML = `
+                <img src="${data.img}" width="250" height="150">
+                <h1>${data.name}</h1>
+                <h2>${data.price}</h2>
+                <button>add cart</button>
+            `;
+
+            productdata.appendChild(dive);
+        });
+    </script>
+
+</body>
+</html>

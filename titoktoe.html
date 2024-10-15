@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <h1 style="text-align: center; margin-bottom: 50px;">Tic Tack Toe</h1>
+<div class="game">
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+</div>
+
+<div class="reset">
+<button id="resetbtn">Reset</button>
+</div>
+
+<div class="winer">
+    <iframe src="https://giphy.com/embed/o75ajIFH0QnQC3nCeD" width="400" height="300" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+let boxes = document.querySelectorAll(".box")
+ let reset = document.querySelector(".resetbtn")
+
+
+let turno = true;
+
+const winPatterns = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+]
+
+
+boxes.forEach((box) => {
+    box.addEventListener("click", ()=>{
+        console.log("click the button");
+        if(turno){
+            box.textContent = "X";
+            turno = false;
+        }else{
+            box.textContent = "0";
+            turno = true;
+        }
+        box.disabled = true;
+checkwinner();
+    })
+})
+
+
+
+
+function checkwinner () {
+    for (let pattern of winPatterns){
+
+        let pas1val = boxes[pattern[0]].innerText;
+        let pas2val = boxes[pattern[1]].innerText;
+        let pas3val = boxes[pattern[2]].innerText;
+
+        
+       
+        if(pas1val != "" && pas2val != "" && pas3val != ""){
+            if(pas1val === pas2val && pas2val === pas3val){
+         console.log("winner ", pas1val);
+            }
+        
+        }
+    }
+} 
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .game{
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+        grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(3, 100px); 
+}
+.game button{
+    border: 2px solid rgb(119, 118, 118);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 80px;
+    background-color: rgb(221, 228, 228);
+    border-radius: 80px;
+}
+.game button:hover{
+    background-color: rgb(122, 146, 146);
+}
+.box{
+    color: rgb(92, 66, 66);
+    font-size: 50px;
+    font-weight: bold;
+}
+.reset{
+    display: flex;
+    justify-content: center;
+}
+.reset button{
+    background-color: orange;
+    border: none;
+    height: 40px;
+    width: 100px;
+    font-weight: 900;
+    margin-top: 30px;
+}
+
+.winer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    display: none;
+}
+</style>
+</body>
+</html>
