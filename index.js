@@ -1391,5 +1391,34 @@
 
 
 
+// let a = [
+//     {
+//         name: "ashar",
+//         fathername: "khalil",
+//     },
+//     {
+//         name: "ibrar",
+//         fathername: "khalil",
+//     },
+//     {
+//         name: "adnan",
+//         fathername: "khalil",
+//     }
+// ]
 
+// // console.log(a[0].name, a[1].name, a[2].name);
+
+
+// a.map((x)=>{
+// console.log(x.name);
+// })
+
+
+// a.map(key,value)    
+
+
+// a.map(ashar)
+// function ashar(x) {
+//     console.log(x.name);
+// }
 

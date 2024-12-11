@@ -100,9 +100,7 @@
 
 
 
-
-
-    <script src="./properproduct.js"></script>
+<script src="./properproduct.js"></script>
 
     <script>
 
@@ -123,13 +121,29 @@ let generatecarditem = () => {
                 <img src="${img}"/>
                 </div>
                 <p>${price}</p>
+                <button onClick="cartremove(${id})">Remove</button>
             </div>
         `
     }))
 }
 }
-
 generatecarditem ();
+calculate();
+
+
+
+
+
+
+// function cartremove(id){
+//     basket = basket.filter((x) => x.id !== id)
+//     localStorage.setItem('data', JSON.stringify(basket))
+// //     generatecarditem ();
+// // calculate();
+// }
+
+
+
 
     </script>
 

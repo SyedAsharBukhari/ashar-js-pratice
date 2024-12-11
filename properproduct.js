@@ -31,28 +31,28 @@ let shopitemsdata = [
         img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-        id: 6,
+        id: 5,
         name: "vans shoes",
         price: "$500",
         description: "this is product",
         img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-        id: 7,
+        id: 6,
         name: "noka shoes",
         price: "$300",
         description: "this is product",
         img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-        id: 8,
+        id: 7,
         name: "air shoes",
         price: "$400",
         description: "this is product",
         img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-        id: 9,
+        id: 8,
         name: "nike shoes",
         price: "$100",
         description: "this is product",
@@ -60,7 +60,6 @@ let shopitemsdata = [
 
     },
 ];
-
 
 
 const shop = document.getElementById("shop")
@@ -84,8 +83,7 @@ let {id, name, price, description, img} = x
         </div>
     </div>
 `
-    })
-}
+    })}
 
 
 
@@ -96,17 +94,14 @@ function addtocart(id, name, price, img) {
         name: name,
         price: price,
         img: img
-
     }
 
     basket.push(storeDataIntoLocalStroge)
 
-    localStorage.setItem('data', JSON.stringify(basket))
-
+    let aa = localStorage.setItem('data', JSON.stringify(basket))
 
     calculate();
 }
-
 
 
 let calculate = () => {
@@ -119,4 +114,8 @@ let calculate = () => {
 
 generateShop()
 calculate();
+
+
+
+
 

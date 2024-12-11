@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<style>
+    .innerproducts{
+        background-color: red;
+        margin: 20px;
+        height: 400px;
+        width: 300px;
+    }
+    .innerproducts div{
+   
+    }
+    .innerproducts img{
+        height: 150px;
+        width: 300px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: red;">
+<h1>ashar</h1>
+<div style="height: 100px; width: 100px; border-radius: 99px; background-color: orange; text-align: center; display: flex; justify-content: center; align-items: center;">
+<div id="cartamount" style="font-size: 40px; font-weight: bold;">0</div>
+</div>
+    </div>
+
+    <div id="shop" style="display: flex;"></div>
+
+
+
+
+
+
+
+
+<script>
+
+let shopdata = [
+    {
+        id: 1,
+        name: "adidas",
+        description: "this is product name",
+        price: "$100",
+        img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+        id: 2,
+        name: "NIke",
+        description: "this is product name",
+        price: "$200",
+        img: "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+]
+
+
+
+
+
+function datarender(argument) {
+    let shop = document.getElementById("shop")
+shop.innerHTML = shopdata.map(ashar)
+
+function ashar(data){
+let {id, name, description, price, img} = data
+    
+return `
+<div class="innerproducts">
+    <img src="${img}"/>
+    <div>
+    <h1>${name}</h1>
+    <p>${price}</p>
+    <h4>${description}</h4>
+    <button onClick="add('${id}', '${name}', '${description}', '${price}', '${img}')">add to cart</button>
+</div>
+    </div>
+`}
+
+}
+
+function add(id,name,description,price,img) {
+    let cartamount = document.getElementById("cartamount")
+    cartamount.innerHTML = 
+}
+
+datarender();
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

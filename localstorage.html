@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
 
-    <div id="getData"></div>
-    <button onclick="handleSaveFunc()">Save to Local Stroge</button>
 
 
-
-</body>
-<script>
+    <!-- <div id="getData"></div>
+    <button onclick="handleSaveFunc()">Save to Local Stroge</button> -->
+ 
+<!-- <script>
 
     const dummyData = [
         {
@@ -37,35 +35,143 @@
 
 
 
-
     function handleSaveFunc() {
 
 
-        // var getData = document.getElementById("getData")
-        // let valueSave = ""
-        // // console.log("dummyData",dummyData);
+        var getData = document.getElementById("getData")
+        let valueSave = ""
+        // console.log("dummyData",dummyData);
 
-        // const name = "Ashar"
+        const name = "Ashar"
 
-        // localStorage.setItem("stroge", JSON.stringify(name)) // data set krte huwe hamesha  JSON.stringify() use huta ha ye kabhi bi getItem use krte huwe nahi huta
+        localStorage.setItem("stroge", JSON.stringify(name)) // data set krte huwe hamesha  JSON.stringify() use huta ha ye kabhi bi getItem use krte huwe nahi huta
 
-        // const checkData = localStorage.getItem("stroge") // data get krte huwe hamesha  JSON.parse() use huta ha ye kabhi bi setItem use krte huwe nahi huta
+        const checkData = localStorage.getItem("stroge") // data get krte huwe hamesha  JSON.parse() use huta ha ye kabhi bi setItem use krte huwe nahi huta
 
 
-        // getData.innerHTML = `My Name is ${JSON.parse(checkData)}`
+        getData.innerHTML = `My Name is ${JSON.parse(checkData)}`
 
 
 
         localStorage.setItem("ashar", JSON.stringify(dummyData))
 let a = JSON.parse(localStorage.getItem("ashar"))[0].name
 console.log(a);
-
         getData.innerHTML = `My Name is ${a}`
 
 
-
+localStorage.setItem("syed", JSON.stringify(dummyData))
+let a = JSON.parse(localStorage.getItem("ashar"))[0].name
+console.log(a);
+      getData.innerHTML = "My Name is " + a
     }
 
-</script>
+</script> -->
 
+
+
+
+
+<!-- <h1>mera name h = <span class="showdata"></span></h1>
+<input type="text" class="inputr"> 
+
+    <script>
+    let showdata = document.querySelector(".showdata")
+let input = document.querySelector(".inputr")
+
+input.addEventListener("input", ashar)
+showdata.innerText = localStorage.getItem('input')
+
+function ashar(e) {
+    localStorage.setItem("input", e.target.value)
+    showdata.innerText = localStorage.getItem('input')
+
+    }
+    </script> -->
+
+
+
+
+    
+<!-- <h1>name = <span class="showdata"></span></h1>
+<h1>age = <span class="ageshowdata"></span></h1>
+<input type="text" class="inputr"> 
+<input type="text" class="age"> 
+
+
+<script>
+let showdata = document.querySelector(".showdata")
+let ageshowdata = document.querySelector(".ageshowdata")
+let ages = document.querySelector(".age")
+let inputs = document.querySelector(".inputr")
+
+
+const data = JSON.parse(localStorage.getItem("data"))
+
+inputs.addEventListener("input", (e)=>{
+    data.name = e.target.value
+localStorage.setItem("data",JSON.stringify(data))
+showdata.innerHTML = e.target.value
+})
+
+
+ages.addEventListener("input", (e)=>{
+    data.age = e.target.value
+localStorage.setItem("data",JSON.stringify(data))
+ageshowdata.innerHTML = e.target.value
+
+})
+
+
+</script> -->
+
+
+
+
+
+
+<!-- <h1 class="asd"></h1>
+<script>
+    let frst = prompt("enter your pass")
+    let scnd = prompt("enter your kaaa")
+
+localStorage.setItem(frst,scnd)
+
+let a = document.querySelector(".asd")
+let b = localStorage.getItem(frst)
+
+a.innerText = b
+</script> -->
+
+
+
+
+
+
+
+
+<!-- <h1> ==== </h1>
+<input type="text" id="input">
+
+<script>
+    let h1 = document.querySelector("h1")
+    let input = document.getElementById("input")
+
+
+let a = localStorage.getItem("input")
+h1.innerText = a
+
+
+    input.addEventListener("input", (e)=>{
+        localStorage.setItem("input", e.target.value)
+        h1.innerText = e.target.value
+    })
+
+</script> -->
+
+
+
+
+
+
+</body>
 </html>
